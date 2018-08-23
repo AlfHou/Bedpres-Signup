@@ -32,14 +32,16 @@ def getEventLinks(html):
     return eventLinks
 
 def tryLogin(url, browser):
-    USERNAME = "USERNAME"
-    PASSWORD = "PASSWORD"
+    print("Type your username:")
+    username = input()
+    print("Type your password")
+    password = input()
     browser.get(url)
-    username = browser.find_element_by_name("username")
-    password = browser.find_element_by_name("password")
+    usernameForm = browser.find_element_by_name("username")
+    passwordForm = browser.find_element_by_name("password")
 
-    username.send_keys(USERNAME)
-    password.send_keys(PASSWORD)
+    usernameForm.send_keys(username)
+    passwordForm.send_keys(password)
     browser.find_element_by_class_name("btn-block").click()
 
 
